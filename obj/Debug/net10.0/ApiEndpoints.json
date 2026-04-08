@@ -1,0 +1,92 @@
+[
+  {
+    "ContainingType": "CrudCafeteria.Controllers.SolicitacoesController",
+    "Method": "GetAll",
+    "RelativePath": "api/Solicitacoes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "prioridade",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CrudCafeteria.Controllers.SolicitacoesController",
+    "Method": "Create",
+    "RelativePath": "api/Solicitacoes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CrudCafeteria.DTOs.CreateSolicitacaoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CrudCafeteria.Controllers.SolicitacoesController",
+    "Method": "GetById",
+    "RelativePath": "api/Solicitacoes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CrudCafeteria.Controllers.SolicitacoesController",
+    "Method": "Update",
+    "RelativePath": "api/Solicitacoes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CrudCafeteria.DTOs.UpdateSolicitacaoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CrudCafeteria.Controllers.SolicitacoesController",
+    "Method": "Delete",
+    "RelativePath": "api/Solicitacoes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
