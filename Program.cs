@@ -4,27 +4,33 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 DbContext (banco em memória)
+// DbContext (banco em memória)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("SolicitacoesDb"));
 
 builder.Services.AddScoped<ISolicitacaoService, SolicitacaoService>();
 
-// 🔹 Controllers
+// Controllers
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        // Retorna "Aberta" em vez de 0
         options.JsonSerializerOptions.Converters.Add(
             new System.Text.Json.Serialization.JsonStringEnumConverter()
         );
     });
 
-// 🔹 Swagger
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Seed de dados
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    AppDbSeeder.Seed(context);
+}
 
 // 🔹 Middleware
 if (app.Environment.IsDevelopment())

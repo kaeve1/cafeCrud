@@ -19,9 +19,6 @@ public class SolicitacoesController : ControllerBase
         _logger = logger;
     }
 
-    // ========================================================
-    // HELPERS
-    // ========================================================
 
     private ObjectResult ErroInterno(string operacao, Exception ex)
     {
@@ -34,10 +31,6 @@ public class SolicitacoesController : ControllerBase
             operacao
         });
     }
-
-    // ========================================================
-    // ENDPOINTS
-    // ========================================================
 
     // GET: api/solicitacoes ou status
     [HttpGet]

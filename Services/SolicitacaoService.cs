@@ -134,10 +134,12 @@ namespace CrudCafeteria.Services
             return normalizado switch
             {
                 "aberta" => Status.Aberta,
+                "aberto" => Status.Aberta,
                 "em andamento" => Status.EmAndamento,
                 "emandamento" => Status.EmAndamento,
                 "concluida" => Status.Concluida,
                 "concluido" => Status.Concluida,
+                "concluída" => Status.Concluida,
                 "concluído" => Status.Concluida,
                 _ => null
             };
@@ -150,9 +152,14 @@ namespace CrudCafeteria.Services
             return normalizado switch
             {
                 "baixa" => Prioridade.Baixa,
+                "baixo" => Prioridade.Baixa,
                 "media" => Prioridade.Media,
+                "medio" => Prioridade.Media,
                 "média" => Prioridade.Media,
+                "médio" => Prioridade.Media,
                 "alta" => Prioridade.Alta,
+                "alto" => Prioridade.Alta,
+                "especial" => Prioridade.Especial,
                 _ => null
             };
         }
