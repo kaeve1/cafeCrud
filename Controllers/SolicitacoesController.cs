@@ -32,7 +32,7 @@ public class SolicitacoesController : ControllerBase
         });
     }
 
-    // GET: api/solicitacoes ou status
+    // GET: api/solicitacoes prioridade ou status
     [HttpGet]
     public async Task<IActionResult> GetAll(
     [FromQuery] string? status,
