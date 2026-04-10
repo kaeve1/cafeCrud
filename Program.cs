@@ -1,14 +1,19 @@
 using CrudCafeteria.Data;
 using CrudCafeteria.Services;
+using CrudCafeteria.Repositories; 
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// DbContext (banco em memória)
+// DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("SolicitacoesDb"));
 
-builder.Services.AddScoped<ISolicitacaoService, SolicitacaoService>();
+// Repository
+builder.Services.AddScoped<ISolicitacaoRepository, SolicitacaoRepository>();
+
+// Service
+builder.Services.AddScoped<SolicitacaoService>();
 
 // Controllers
 builder.Services.AddControllers()
@@ -25,14 +30,14 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Seed de dados
+// Seed
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     AppDbSeeder.Seed(context);
 }
 
-// 🔹 Middleware
+// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -40,9 +45,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

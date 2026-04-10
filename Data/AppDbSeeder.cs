@@ -3,6 +3,8 @@ using CrudCafeteria.Models.Enums;
 
 namespace CrudCafeteria.Data;
 
+
+// cria aqui o banco de dados falso para teste, com algumas solicitações de manutenção pré-definidas
 public static class AppDbSeeder
 {
     public static void Seed(AppDbContext context)

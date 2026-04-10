@@ -8,11 +8,11 @@ namespace CrudCafeteria.Controllers;
 [Route("api/[controller]")]
 public class SolicitacoesController : ControllerBase
 {
-    private readonly ISolicitacaoService _service;
+    private readonly SolicitacaoService _service;
     private readonly ILogger<SolicitacoesController> _logger;
 
     public SolicitacoesController(
-        ISolicitacaoService service,
+        SolicitacaoService service,
         ILogger<SolicitacoesController> logger)
     {
         _service = service;
@@ -156,7 +156,7 @@ public class SolicitacoesController : ControllerBase
             if (!deletado)
             {
                 _logger.LogInformation("Solicitação {Id} não encontrada para exclusão.", id);
-                return NotFound(new { erro = "Não encontrado." });
+                return NotFound(new { erro = $"Solicitação com o id {id} Não encontrada." });
             }
 
             _logger.LogInformation("Solicitação {Id} excluída.", id);
