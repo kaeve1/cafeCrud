@@ -16,23 +16,23 @@ namespace CrudCafeteria.Services
 
         public async Task<List<ResponseSolicitacaoDto>> GetAll(string? status, string? prioridade)
         {
-            var lista = await _repository.GetAll();
+            var query = await _repository.GetAll();
 
             if (!string.IsNullOrWhiteSpace(status))
             {
                 var statusConvertido = ConverterStatus(status);
                 if (statusConvertido.HasValue)
-                    lista = lista.Where(s => s.Status == statusConvertido.Value).ToList();
+                    query = query.Where(s => s.Status == statusConvertido.Value).ToList();
             }
 
             if (!string.IsNullOrWhiteSpace(prioridade))
             {
                 var prioridadeConvertida = ConverterPrioridade(prioridade);
                 if (prioridadeConvertida.HasValue)
-                    lista = lista.Where(s => s.Prioridade == prioridadeConvertida.Value).ToList();
+                    query = query.Where(s => s.Prioridade == prioridadeConvertida.Value).ToList();
             }
 
-            return lista.Select(s => new ResponseSolicitacaoDto
+            return query.Select(s => new ResponseSolicitacaoDto
             {
                 Id = s.Id,
                 NomeMaquina = s.NomeMaquina,

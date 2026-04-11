@@ -26,7 +26,6 @@ C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\static
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\CrudCafe.EE631263.Up2Date
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\CrudCafeteria.dll
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\obj\Debug\net10.0\refint\CrudCafeteria.dll
@@ -39,3 +38,5 @@ C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\bin\Debug\net10.0\Micros
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\bin\Debug\net10.0\Castle.Core.dll
+C:\Users\ke947\source\repos\CrudCafeteria\CrudCafeteria\bin\Debug\net10.0\Moq.dll
