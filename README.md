@@ -34,10 +34,10 @@ Fluxo
 
 Endpoints
 
-GET /api/solicitacoes
-GET /api/solicitacoes/{id}
-POST /api/solicitacoes
-PUT /api/solicitacoes/{id}
+GET /api/solicitacoes \n
+GET /api/solicitacoes/{id} \n
+POST /api/solicitacoes \n 
+PUT /api/solicitacoes/{id} \n
 DELETE /api/solicitacoes/{id}
 
 
