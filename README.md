@@ -41,3 +41,6 @@ PUT /api/solicitacoes/{id}
 DELETE /api/solicitacoes/{id}
 
 
+OS TESTES UNITARIOS ESTÂO EM:
+https://github.com/kaeve1/cafeCrudTests
+
