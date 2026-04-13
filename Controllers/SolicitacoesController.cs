@@ -1,4 +1,5 @@
 using CrudCafeteria.DTOs;
+using CrudCafeteria.Models.Enums;
 using CrudCafeteria.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,18 +39,27 @@ public class SolicitacoesController : ControllerBase
     [FromQuery] string? status,
     [FromQuery] string? prioridade)
     {
-        try
         {
-            var lista = await _service.GetAll(status, prioridade);
+            if (!string.IsNullOrWhiteSpace(status) &&
+                !Enum.TryParse<Status>(status, ignoreCase: true, out _))
+                return BadRequest(new { erro = $"Status '{status}' inválido. Valores aceitos: Aberta, EmAndamento, Concluida" });
 
-            if (lista.Count == 0)
-                return Ok(new { mensagem = "Nenhuma solicitação encontrada.", dados = lista });
+            if (!string.IsNullOrWhiteSpace(prioridade) &&
+                !Enum.TryParse<Prioridade>(prioridade, ignoreCase: true, out _))
+                return BadRequest(new { erro = $"Prioridade '{prioridade}' inválida. Valores aceitos: Baixa, Media, Alta, Especial" });
+            try
+            {
+                var lista = await _service.GetAll(status, prioridade);
 
-            return Ok(lista);
-        }
-        catch (Exception ex)
-        {
-            return ErroInterno("listar solicitações", ex);
+                if (lista.Count == 0)
+                    return Ok(new { mensagem = "Nenhuma solicitação encontrada.", dados = lista });
+
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return ErroInterno("listar solicitações", ex);
+            }
         }
     }
 

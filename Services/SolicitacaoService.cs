@@ -81,7 +81,7 @@ namespace CrudCafeteria.Services
 
             await _repository.Add(solicitacao);
 
-            return await GetById(solicitacao.Id);
+            return await GetById(solicitacao.Id); // *
         }
 
         public async Task<bool> Update(int id, UpdateSolicitacaoDto dto)
@@ -121,42 +121,21 @@ namespace CrudCafeteria.Services
             return true;
         }
 
-        
+
         private Status? ConverterStatus(string valor)
         {
-            var normalizado = valor.ToLower().Trim();
+            if (Enum.TryParse<Status>(valor, ignoreCase: true, out var resultado))
+                return resultado;
 
-            return normalizado switch
-            {
-                "aberta" => Status.Aberta,
-                "aberto" => Status.Aberta,
-                "em andamento" => Status.EmAndamento,
-                "emandamento" => Status.EmAndamento,
-                "concluida" => Status.Concluida,
-                "concluido" => Status.Concluida,
-                "concluída" => Status.Concluida,
-                "concluído" => Status.Concluida,
-                _ => null
-            };
+            return null;
         }
 
         private Prioridade? ConverterPrioridade(string valor)
         {
-            var normalizado = valor.ToLower().Trim();
+            if (Enum.TryParse<Prioridade>(valor, ignoreCase: true, out var resultado))
+                return resultado;
 
-            return normalizado switch
-            {
-                "baixa" => Prioridade.Baixa,
-                "baixo" => Prioridade.Baixa,
-                "media" => Prioridade.Media,
-                "medio" => Prioridade.Media,
-                "média" => Prioridade.Media,
-                "médio" => Prioridade.Media,
-                "alta" => Prioridade.Alta,
-                "alto" => Prioridade.Alta,
-                "especial" => Prioridade.Especial,
-                _ => null
-            };
+            return null;
         }
     }
 }
