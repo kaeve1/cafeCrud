@@ -1,0 +1,22 @@
+# Build
+bin/
+obj/
+
+# Banco de dados
+cafeteria.db
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.Backup.tmp
+*.tmp
+
+# Logs
+*.log
+
+# Rider
+.idea/
+
+# Mac
+.DS_Store
