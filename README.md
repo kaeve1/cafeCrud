@@ -13,7 +13,7 @@ Tecnologias
 * C#
 * .NET
 * Entity Framework Core
-* Banco de dados InMemory
+* Banco de dados Sql Lite
 * Swagger
 
 Estrutura
