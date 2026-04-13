@@ -44,6 +44,11 @@ PUT /api/solicitacoes/{id}
 
 DELETE /api/solicitacoes/{id}
 
+Após Clonar rode
+1. dotnet tool install --global dotnet-ef
+2. dotnet add package Microsoft.EntityFrameworkCore.Design
+3. dotnet ef database update
+4. dotnet run
 
 OS TESTES UNITARIOS ESTÂO EM:
 https://github.com/kaeve1/cafeCrudTests
