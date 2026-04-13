@@ -2,6 +2,9 @@
 bin/
 obj/
 
+# Banco de dados
+cafeteria.db
+
 # Visual Studio
 .vs/
 *.user
