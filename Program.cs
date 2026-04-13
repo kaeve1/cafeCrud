@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("SolicitacoesDb"));
+    options.UseSqlite("Data Source=cafeteria.db"));
 
 // Repository
 builder.Services.AddScoped<ISolicitacaoRepository, SolicitacaoRepository>();
@@ -17,6 +17,10 @@ builder.Services.AddScoped<SolicitacaoService>();
 
 // Controllers
 builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.SuppressModelStateInvalidFilter = true;
+    })
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.Converters.Add(

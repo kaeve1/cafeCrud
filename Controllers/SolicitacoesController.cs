@@ -88,7 +88,7 @@ public class SolicitacoesController : ControllerBase
                 .SelectMany(v => v.Errors)
                 .Select(e => e.ErrorMessage);
 
-            return BadRequest(new { erro = "Dados inválidos.", detalhe = erros });
+            return BadRequest(new { erro = "Dados inválidos. Um ou mais campos estão inválidos.", detalhe = erros });
         }
 
         try
@@ -118,7 +118,7 @@ public class SolicitacoesController : ControllerBase
                 .SelectMany(v => v.Errors)
                 .Select(e => e.ErrorMessage);
 
-            return BadRequest(new { erro = "Dados inválidos.", detalhe = erros });
+            return BadRequest(new { erro = "Dados inválidos. Um ou mais campos inválidos.", detalhe = erros });
         }
 
         try
