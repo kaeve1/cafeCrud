@@ -3,6 +3,7 @@ using CrudCafeteria.Models.Entidade;
 using CrudCafeteria.Repositories;
 using Microsoft.EntityFrameworkCore;
 
+namespace CrudCafeteria.Repositories;
 public class SolicitacaoRepository : ISolicitacaoRepository
 {
     private readonly AppDbContext _context;
