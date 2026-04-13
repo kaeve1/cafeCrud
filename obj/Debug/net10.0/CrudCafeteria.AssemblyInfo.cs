@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudCafeteria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1591016e5bb64e59a5164a8294fbe94d4ad66a74")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+133eee4a3ff1367b800c8b3597b6180ffb1c3738")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudCafeteria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudCafeteria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
